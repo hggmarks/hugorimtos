@@ -25,13 +25,6 @@ int binSearch(int sortedArr[], int low, int high, int term){
     }
 }
 
-void printArray(int arr[], int arrSize) {
-    for (int i = 0; i < arrSize; i++) {
-        cout << arr[i] << ' ';
-    }
-    cout << endl;
-}
-
 int main() {
     int arrSize = 0, totalNumbers = 0, num = 0;
 
@@ -47,7 +40,7 @@ int main() {
 
     for (int j = 0; j < totalNumbers; j++) {
         cin >> num;
-        
+
         int result = binSearch(sortedArr, 0, arrSize - 1, num);
 
         result != -1 ? cout << result << endl : cout << 'x' << endl;
