@@ -2,6 +2,7 @@
 
 using std::cin;
 using std::cout;
+using std::endl;
 
 void tempSwap(int* a, int* b) {
     int temp = *a;
@@ -25,32 +26,38 @@ int hoarePartition(int arr[], int low, int high) {
     } while(i < j);
     
     tempSwap(&arr[i], &arr[j]);
-    tempSwap(&arr[j], &arr[low]);
+    tempSwap(&arr[low], &arr[j]);
 
     return j;
 }
 
 void quickSort(int arr[], int low, int high) {
 
-    int splitPos = hoarePartition(arr, low, high);
-    quickSort(arr, low, splitPos-1);
-    quickSort(arr, splitPos+1, high);
+    if(low < high){
+        int splitPos = hoarePartition(arr, low, high);
+        quickSort(arr, low, splitPos-1);
+        quickSort(arr, splitPos+1, high);
+    }
 }
 
-int binarySearch(int arr[], int low, int high, int term) {
-    int idx = 0;
+bool binarySearch(int arr[], int low, int high, int term) {
+    int idx = 0, mid = 0;
+
     if (low <= high) {
-        int mid = low + (high - low)/2;
+        mid = low + (high - low)/2;
 
         if (term == arr[mid]){
-            return 1;
+            return true;
+
         } else if (term > arr[mid]) {
             return binarySearch(arr, mid+1, high, term);
         }
 
         return binarySearch(arr, low, mid-1, term);
 
-    } else return 0;
+    } else {
+	    return false;
+    }
 }
 
 void fillArray(int arr[], int arrSize) {
@@ -77,7 +84,7 @@ int main() {
         totalNum += binarySearch(arr, 0, arrSize-1, arr[i]+k);
     }
     
-    cout << totalNum;
+    cout << totalNum << endl;
     
     return 0;
 }
