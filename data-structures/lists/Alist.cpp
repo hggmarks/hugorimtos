@@ -67,10 +67,24 @@ class AList: public List<E> {
         void prev(){ if (cursor > 0) cursor--; }
         void next(){ if (cursor < listSize) cursor++; }
 
-        int lenght() const { return listSize; }
+        int length() const { return listSize; }
 
         int cursorPos() const { return cursor; }
 
+        void moveToPos(int pos) {
+            if ((pos>=0) && (pos<=listSize))    {
+                cursor = pos;
+            } else {
+                cout << "position out of range" << endl;
+            }
+        }
 
+        const E& getValue() const {
+            if ((cursor>=0) && (cursor<listSize)) {
+                return listArr[cursor];
+            } else {
+                cout << "No current element" << endl;
+            }
+        }
 
 };

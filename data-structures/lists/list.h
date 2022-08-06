@@ -15,10 +15,10 @@ class List {
         virtual void clear() = 0;
 
         //adds the "item" element at cursor right
-        virtual void insert(const E &item) = 0;
+        virtual void insert(const E &element) = 0;
 
         //adds the "item" element at the end of the list
-        virtual void append(const E &item) = 0;
+        virtual void append(const E &element) = 0;
 
         //removes the element at the right of the cursor from the list
         virtual E remove() = 0;
@@ -39,7 +39,7 @@ class List {
         virtual int length() = 0;
 
         //return the current position of the cursor
-        virtual int cursorPos() = 0;
+        virtual int cursorPos() const = 0;
 
         //moves the cursor to the "pos" position
         virtual void moveToPos(int pos) = 0;
