@@ -1,2 +1,2 @@
 # hugorimtos
-C/C++ and possibly Go and Python(?) implementation of algorithms and datastructures
+Here we have some presentations, code snippets, examples and more about algorithms and data structures with the purpose of teaching this subject in a introductory way.
