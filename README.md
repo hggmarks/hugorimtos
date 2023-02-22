@@ -1,2 +1,2 @@
 # hugorimtos
-C/C++ and possibly Go and Python(?) implementation of algorithms and datastructures
+C/C++ and Python(?) implementation of some algorithms and datastructures
