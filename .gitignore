@@ -34,5 +34,8 @@
 # vscode
 .vscode
 
-#ccls
+# ccls
 .ccls-cache
+
+# obsidian
+.obsidian
